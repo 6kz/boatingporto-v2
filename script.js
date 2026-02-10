@@ -1,35 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. LÓGICA DO CARROSSEL ---
     const track = document.querySelector('.carousel-track');
-    if (track) {
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.next');
-        const prevButton = document.querySelector('.prev');
-        let currentIndex = 0;
+    const slides = track ? Array.from(track.children) : [];
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    
+    if (!track || slides.length === 0) return;
 
-        const updateCarousel = (index) => {
-            track.style.transform = `translateX(-${index * 100}%)`;
-        };
+    let currentIndex = 0;
+    let autoSlideInterval;
 
-        nextButton?.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel(currentIndex);
-        });
+    const updateCarousel = (index) => {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
 
-        prevButton?.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateCarousel(currentIndex);
-        });
+    const startAutoSlide = () => {
+        stopAutoSlide(); 
+        autoSlideInterval = setInterval(() => {
+            moveNext();
+        }, 7000);
+    };
 
-        // Auto-play a cada 6 segundos
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel(currentIndex);
-        }, 6000);
-    }
+    const stopAutoSlide = () => {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+    };
 
-    // --- 2. SCROLL SUAVE ---
+ 
+    const moveNext = () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel(currentIndex);
+    };
+
+    const movePrev = () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel(currentIndex);
+    };
+
+
+    nextButton?.addEventListener('click', () => {
+        moveNext();
+        startAutoSlide(); 
+    });
+
+    prevButton?.addEventListener('click', () => {
+        movePrev();
+        startAutoSlide(); 
+    });
+
+    track.addEventListener('mouseenter', stopAutoSlide);
+    track.addEventListener('mouseleave', startAutoSlide);
+
+    startAutoSlide();
+
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -50,13 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. MENU MOBILE TOGGLE ---
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.desktop-nav');
 
     menuToggle?.addEventListener('click', () => {
         nav.classList.toggle('mobile-active');
-        // Adicionar estilo inline se necessário para override rápido
         if(nav.classList.contains('mobile-active')) {
             nav.style.display = 'flex';
             nav.style.flexDirection = 'column';
