@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boating Porto | Douro River Private Experience</title>
-
+    <title>Boating Porto | Douro River Experiences</title>
+    <link rel="shortcut icon" href="imgs/favicon_BP.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,23 +16,19 @@
 
     <header>
         <div class="header-nav">
-            <a href="#" class="logo-text">BOATING PORTO</a>
-
+            <a href="#" class="logo-link">
+                <img src="imgs/design-sem-nome_BP.png" alt="Logo Boating Porto" class="header-logo">
+            </a>
+        
             <nav class="desktop-nav">
-                <div class="nav-links">
-                    <a href="#sobre" class="nav-link">Sobre</a>
-                    <a href="#servicos" class="nav-link">Serviços</a>
-                    <a href="#galeria" class="nav-link">Galeria</a>
-                    <a href="#reservas" class="nav-link">Reservas</a>
-                </div>
-
+                <a href="#sobre" class="nav-link">About</a>
+                <a href="#servicos" class="nav-link">Services</a>
+                <a href="#galeria" class="nav-link">Gallery</a>        
                 <script type="text/javascript"
                     src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ec400deb-618d-42d8-a310-ed71218bfeed"
                     async></script>
-
                 <button class="bokunButton btn-modern-reserva" id="bokun_1dfa58c0_b277_4401_ba94_eec7e661d70e">BOOK NOW</button>
             </nav>
-
             <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
         </div>
     </header>
@@ -41,67 +36,91 @@
     <main>
         <section id="hero-block" class="block-hero">
             <div class="header-content">
-                <span class="tagline-hero">Exclusive Boat Tours</span>
-                <h1 class="heading-xl">Douro River Private Experience</h1>
+                <p class="tagline-hero">Exclusive Boat Tours</p>
+                <h1 class="heading-xl">Douro River Experiences</h1>
                 <div class="cta-group">
-                    <a href="#reservas" class="btn-hero-primary">Expore Experiences</a>
+                    <a href="#reservas" class="btn-hero-primary">Explore Tours</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="block-bridge">
+            <div class="container-narrow">
+                <h2 class="bridge-text">Are you ready for a Trip in <span class="highlight-boat">"Your Friend's Boat"?</span></h2>
             </div>
         </section>
 
         <section id="sobre" class="block grid-about">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&q=80&w=1000"
-                    alt="Barco Boating Porto" class="img-responsive">
+                <img src="imgs/Jonas_BP.JPG" alt="CEO & Founder Jonatas" class="img-full">
             </div>
             <div class="about-text">
-                <span class="tagline">A nossa essência</span>
-                <h2 class="heading-lg">Momentos Únicos no Rio Douro</h2>
-                <p>A Boating Porto nasce da vontade de partilhar os segredos do Douro com quem procura exclusividade.
-                    Oferecemos um serviço personalizado, onde o conforto e a tradição se encontram em cada curva do rio.
-                </p>
-                <p>Dos charters privados às experiências partilhadas, cada viagem é desenhada para criar memórias
-                    inesquecíveis com a cidade do Porto como cenário.</p>
+                <span class="tagline">Boating Porto</span>
+                <h2 class="heading-lg">Authentic and Friendly Experiences on the Douro River</h2><br>   
+                <p>Boating Porto is dedicated to providing moments of exclusivity and comfort. We sail the waters of the Douro River with
+                the aim of showcasing the city of Porto from a unique and appropriate perspective.</p>
+                <p>Whether on a private charter or a shared tour, we guarantee excellent service focused on hospitality and attention to
+                detail.</p>
             </div>
         </section>
 
-        <section id="servicos" class="block-services bg-light">
-            <div class="text-center section-header">
-                <span class="tagline">O que oferecemos</span>
-                <h2 class="heading-lg">Serviços Disponíveis</h2>
+        <section id="servicos" class="block bg-light">
+            <div class="text-center">
+                <h2 class="heading-lg">Our Experiences</h2>
             </div>
-
-            <div class="grid-services">
-                <div class="service-card">
-                    <h3>Privados</h3>
-                    <p>Barco exclusivo para o seu grupo. Liberdade total de roteiro e total privacidade a bordo.</p>
+            <div class="grid-services vertical-center">
+                <div class="service-item">
+                    <h3 class="heading-md gold-text">Private Trip</h3>
+                    <!--<p><strong>Tailored Just for You</strong></p><br>-->
+                    <p>Experience the Douro River in complete privacy and comfort. Our Private Charters are designed for those who seek an
+                    exclusive escape, whether you are celebrating a special milestone, planning a romantic proposal, or simply wishing to
+                    enjoy the Porto skyline with your inner circle.</p><br>
+                    <p>Onboard our premium vessel, you are the master of the itinerary. Relax on the deck with a glass of curated Portuguese
+                    wine, enjoy personalized storytelling from our expert skipper, and discover hidden perspectives of the UNESCO World
+                    Heritage banks that larger boats simply cannot reach. This is not just a boat tour; it is your private sanctuary on the
+                    water.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Partilhados</h3>
-                    <p>A forma perfeita de conhecer pessoas e desfrutar das margens do Porto numa atmosfera social.</p>
+                <div class="service-image-container">
+                    <img src="imgs/Douro10-GuidePointing.jpg" alt="Guide Pointing" class="img-full centered-img">
                 </div>
-                <div class="service-card">
-                    <h3>Eventos</h3>
-                    <p>Celebrações especiais, pedidos de casamento ou eventos corporativos com o Douro como pano de
-                        fundo.</p>
+            </div>
+        
+            <div class="grid-services vertical-center">
+                <div class="service-image-container">
+                    <img src="imgs/Douro1-GuideLookingAway.jpg" alt="Guide Looking Away" class="img-full centered-img">
+                </div>
+                <div class="service-item">
+                    <h3 class="heading-md">Shared Trip</h3>
+                    <!--<p><strong>Modern Sailing, Socially Inspired</strong></p><br>-->
+                    <p>Our Shared Experiences are perfect for solo travelers, couples, or small groups who want to discover the magic of Porto
+                    while meeting like-minded explorers. We keep our groups small to ensure the atmosphere remains intimate and
+                    premium.</p><br>
+                    <p>Glide under the iconic six bridges as you share stories and a toast with fellow travelers. It’s a relaxed, friendly, and
+                    sophisticated way to learn about the city’s deep-rooted wine culture and history. Enjoy the same high-end service and
+                    local expertise of our private tours, with the added charm of new connections and a vibrant social spirit.</p>
                 </div>
             </div>
         </section>
-
         <section id="galeria" class="galeria-section">
             <div class="carousel-container">
                 <div class="carousel-track">
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1520699049698-acd2fccb8cc8?auto=format&fit=crop&q=80&w=1400"
-                            alt="Porto Sunset">
+                        <img src="imgs/Douro15-SerraDoPilar.jpg"
+                            alt="Serra do Pilar">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&q=80&w=1400"
-                            alt="Douro Boat Tour">
+                        <img src="imgs/Douro26-CupHolder_BP.jpg"
+                            alt="Douro Boat Tour, Cup Holder">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1534008757030-27299c4371b6?auto=format&fit=crop&q=80&w=1400"
+                        <img src="imgs/Douro20-Ribeira.jpg"
                             alt="Ribeira Porto">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imgs/Douro52-CoupleBow.jpg" alt="Couple at Bow">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imgs/Douro22-CaisDeGaia.jpg" alt="Cais de Gaia">
                     </div>
                 </div>
                 <button class="carousel-btn prev">❮</button>
@@ -111,10 +130,9 @@
 
         <section id="reservas" class="block">
             <div class="text-center">
-                <h2 class="heading-lg">Reserve a sua Experiência</h2>
-                <p class="sub-heading">Escolha entre tours privados ou partilhados abaixo.</p>
+                <h2 class="heading-lg">Online Booking</h2>
+                <p>Select down below the preferred experience.</p>
             </div>
-
             <div class="bokun-container">
                 <div class="bokunWidget"
                     data-src="https://widgets.bokun.io/online-sales/ec400deb-618d-42d8-a310-ed71218bfeed/product-list/99844">
@@ -124,27 +142,29 @@
     </main>
 
     <footer id="contactos" class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <p class="logo-text" style="color:#fff">BOATING PORTO</p>
-                <p>Navegando a história da cidade.</p>
+        <footer id="contactos" class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="imgs/design-sem-nome_BP.png" alt="Boating Porto Logo" class="footer-logo">
+                    <p>+351 930 613 456</p>
+                    <p>info.boatingporto@gmail.com</p>
+                </div>
+                <div class="footer-legal">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p class="copy">&copy; 2022 Boating Porto.</p>
+                    <p style="opacity: 50%;">Made proudly by <a class="author-footer" href="https://github.com/6kz/">Tomás
+                            Matos</a>.</p>
+                </div>
             </div>
-            <div class="footer-contact">
-                <p>+351 930 613 456</p>
-                <p>info.boatingporto@gmail.com</p>
-            </div>
-            <div class="footer-links">
-                <a href="#">Privacidade</a>
-                <a href="#">Termos</a>
-                <p class="copy">&copy; 2026 Boating Porto.</p>
-            </div>
-        </div>
+        </footer>
     </footer>
 
-    <div id="cookieBanner" class="cookie-banner">
-        <p>Utilizamos cookies para garantir a melhor experiência no nosso site.</p>
+    <!--<div class="cookie-banner" id="cookieBanner">
+        <p>Utilizamos cookies para melhorar a sua experiência. Ao navegar, aceita a nossa política.</p>
         <button id="acceptCookies" class="btn-cookie">Aceitar</button>
-    </div>
+    </div>-->
 
     <script src="script.js"></script>
 </body>
