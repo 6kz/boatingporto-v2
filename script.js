@@ -1,56 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Cookies Logic
-    document.addEventListener('DOMContentLoaded', () => {
-    const cookieBanner = document.querySelector('.cookie-banner');
-    const acceptButton = document.querySelector('#accept-cookies');
 
-    // 1. Verificar se já existe consentimento no navegador
-    const hasAccepted = localStorage.getItem('boating_porto_cookies');
+    // --- 1. LÓGICA DO CARROSSEL ---
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+        let currentIndex = 0;
 
-    if (!hasAccepted) {
-        // Mostra o banner com um pequeno delay para ser mais natural
-        setTimeout(() => {
-            cookieBanner.style.display = 'block';
-            // Trigger para a animação do CSS
-            setTimeout(() => cookieBanner.classList.add('active'), 10);
-        }, 1000);
-    }
+        const updateCarousel = (index) => {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        };
 
-    // 2. Lógica ao clicar em Aceitar
-    if (acceptButton) {
-        acceptButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Animação de saída
-            cookieBanner.classList.remove('active');
-            
-            // Grava a decisão e remove o elemento após a animação
-            setTimeout(() => {
-                cookieBanner.remove();
-                localStorage.setItem('boating_porto_cookies', 'true');
-            }, 400);
+        nextButton?.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel(currentIndex);
         });
+
+        prevButton?.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel(currentIndex);
+        });
+
+        // Auto-play a cada 6 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel(currentIndex);
+        }, 6000);
     }
 
-    // 2. Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.desktop-nav');
-
-    menuToggle?.addEventListener('click', () => {
-        nav.classList.toggle('mobile-active');
-    });
-
-    // 3. Smooth Scroll
+    // --- 2. SCROLL SUAVE ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === "#") return;
-            
-            e.preventDefault();
+
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
-                const headerOffset = 80;
+                const headerOffset = 85;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -58,10 +46,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
-                
-                // Fecha menu mobile ao clicar num link
-                nav.classList.remove('mobile-active');
             }
         });
+    });
+
+    // --- 3. MENU MOBILE TOGGLE ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.desktop-nav');
+
+    menuToggle?.addEventListener('click', () => {
+        nav.classList.toggle('mobile-active');
+        // Adicionar estilo inline se necessário para override rápido
+        if(nav.classList.contains('mobile-active')) {
+            nav.style.display = 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '100%';
+            nav.style.left = '0';
+            nav.style.width = '100%';
+            nav.style.background = '#fff';
+            nav.style.padding = '30px';
+            nav.style.borderBottom = '1px solid #eee';
+        } else {
+            nav.style.display = 'none';
+        }
     });
 });
