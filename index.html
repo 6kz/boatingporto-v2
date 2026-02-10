@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boating Porto - A Sua Experiência no Douro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <header>
+        <div class="header-nav">
+            <a href="/" class="logo-text">BOATING PORTO</a>
+            
+            <nav class="desktop-nav">
+                <a href="#servicos" class="nav-link">Serives</a>
+                <a href="#contactos" class="nav-link">Contacts</a>
+                <a href="#reservas" class="btn btn-primary ml-20">Book Now</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+        <!--<nav class="mobile-menu">
+            <a href="#servicos" class="nav-link">Services</a>
+            <a href="#contactos" class="nav-link">Contacts</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </nav>-->
+    </header>
+
+<main>
+    <section id="hero-block" class="block-hero">
+        <div class="header-content">
+            <p class="tagline">Exclusive Boat Tours</p>
+            <h1 class="heading-xl">Douro River Private Experience</h1>
+            <div class="cta-group">
+                <a href="#reservas" class="btn btn-primary">Book Now</a>
+                <a href="#servicos" class="btn btn-secondary" style="color: white; border-color: white;">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="block">
+        <div class="text-center">
+            <p class="tagline">Services</p>
+            <h2 class="heading-lg">Experiences on the River</h2>
+        </div>
+        
+        <div class="grid-layout">
+            <div class="service-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17c5 0 5-2 10-2s5 2 10 2M2 21c5 0 5-2 10-2s5 2 10 2M12 3v10m0-10L7 8m5-5l5 5"/></svg>
+                <h3 class="heading-md">Private Charters</h3>
+                <p class="text-gray">Private tours with our best guides, enjoy a calm adventure around the Douro River in Porto.</p>
+            </div>
+            <div class="service-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <h3 class="heading-md">Sunset Tours</h3>
+                <p class="text-gray">Golden Hour in Porto. 
+                    An unforgettable and picturesque scene to end your day.</p>
+            </div>
+            <div class="service-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <h3 class="heading-md">Shared Tours</h3>
+                <p class="text-gray">Do you feel like meeting new people and have a friendly experience? Our tailored guides love these type of Tours!f</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas" class="block bg-light-gray">
+        <div class="text-center">
+            <h2 class="heading-lg">Online Booking</h2>
+            <p class="text-gray">Select your date and duration below.</p>
+        </div>
+        <div class="bokun-widget-container">
+            <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ec400deb-618d-42d8-a310-ed71218bfeed" async></script>
+            <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ec400deb-618d-42d8-a310-ed71218bfeed/experience/1114705"></div>
+        </div>
+    </section>
+</main>
+    
+    <footer id="contactos" class="footer bg-dark text-gray">
+        <div class="footer-content">
+            <p class="logo-text text-light" style="color:var(--color-light)">BOATING PORTO</p>
+            <div class="grid-layout columns-4">
+                 <div class="footer-col">
+                    <a>+351 930 613 456</p>
+                    <a>info.boatingporto@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#" class="footer-link">Termos & Condições</a>
+                    <a href="#" class="footer-link">Política de Privacidade</a>
+                </div>
+                </div>
+            <p class="text-x-small copyright">&copy; 2024 Boating Porto. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <div class="cookie-banner">
+        <div class="cookie-banner-frame">
+            <p class="cookie-banner-text">
+                Utilizamos cookies para melhorar a sua experiência no Douro. Ao navegar, concorda com a nossa 
+                <a href="#">Política de Privacidade</a>.
+            </p>
+            <div class="cookie-banner-controls">
+                <button id="accept-cookies" class="btn btn-primary">Aceitar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
