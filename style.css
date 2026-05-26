@@ -14,6 +14,12 @@
     box-sizing: border-box;
 }
 
+/* Rede de segurança absoluta contra scroll horizontal */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -235,7 +241,7 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Services Grid com efeito Ziguezague */
+/* Services Grid */
 .grid-services {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -406,7 +412,6 @@ header {
         grid-template-columns: 1fr;
     }
 
-    /* Inverte a ordem no mobile para a segunda experiência manter texto antes/depois coeso */
     .image-left {
         display: flex;
         flex-direction: column-reverse;
@@ -422,26 +427,23 @@ header {
 }
 
 @media (max-width: 768px) {
-    @media (max-width: 768px) {
-        .desktop-nav {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 10vh;
-            left: 0;
-            width: 100%;
-            background: var(--color-white);
-            padding: 40px 20px;
-            border-bottom: 2px solid var(--color-primary);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .desktop-nav.mobile-active {
-            display: flex;
-        }
+    .desktop-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        width: 100%;
+        background: var(--color-white);
+        padding: 40px 20px;
+        border-bottom: 2px solid var(--color-primary);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
 
+    .desktop-nav.mobile-active {
+        display: flex;
+    }
 
     .desktop-nav .nav-link {
         margin: 15px 0;
